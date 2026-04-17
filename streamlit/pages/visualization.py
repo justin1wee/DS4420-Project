@@ -1,12 +1,17 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parents[1]  # streamlit/
+data_path = BASE_DIR / "data" / "gold_data_clean.csv"
+data_path_2 = BASE_DIR / "data" / "gold_preds.csv"
 
 st.title("📊 Gold Price Predictions")
 
 # --- LOAD DATA ---
-hist_df = pd.read_csv("data/gold_data_clean.csv")
-pred_df = pd.read_csv("data/gold_preds.csv")
+hist_df = pd.read_csv(data_path)
+pred_df = pd.read_csv(data_path_2)
 
 # --- PREPROCESS ---
 hist_df["Date"] = pd.to_datetime(hist_df["Date"])
