@@ -5,8 +5,8 @@ import altair as alt
 st.title("📊 Gold Price Predictions")
 
 # --- LOAD DATA ---
-hist_df = pd.read_csv("../data/gold_data_clean.csv")
-pred_df = pd.read_csv("../data/gold_preds.csv")
+hist_df = pd.read_csv("data/gold_data_clean.csv")
+pred_df = pd.read_csv("data/gold_preds.csv")
 
 # --- PREPROCESS ---
 hist_df["Date"] = pd.to_datetime(hist_df["Date"])
